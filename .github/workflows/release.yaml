@@ -30,8 +30,9 @@ jobs:
           body: "${{github.event.pull_request.body}}"
           draft: false
           prerelease: false
-      - name: Update Release Note
+      - name: Use Node.js
         uses: actions/setup-node@v1
+      - name: Update Release Note
         run: |
           npm install github-release-notes -g
           gren release --override
