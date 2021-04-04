@@ -33,4 +33,5 @@ jobs:
       - name: Update Release Note
         uses: actions/setup-node@v1
         run: |
+          npm install github-release-notes -g
           gren release --override
