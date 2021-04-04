@@ -14,7 +14,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: pull-request merged
         run: |
-          RELEASE_TAG=`${./gradlew properties -q | grep "version:" | awk '{print $2}'}`
+          export RELEASE_TAG=`./gradlew properties -q | grep "version:" | awk '{print $2}'`
           echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
